@@ -1,0 +1,57 @@
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream> 
+using namespace std;
+
+int main() {
+   
+    cout << "--- 1. Запис і читання першого студента (students.txt) ---" << endl;
+
+    ofstream fout_s1("students.txt"); 
+    string name1 = "Іваненко Іван";
+    double grade1 = 95;
+
+    fout_s1 << name1 << "," << grade1 << endl; 
+    fout_s1.close();
+
+    ifstream fin_s1("students.txt");
+    string line;
+
+    while (getline(fin_s1, line)) { 
+        cout << "Прочитаний рядок: " << line << endl;
+    }
+    fin_s1.close();
+
+    cout << "\n--- 2. Додавання другого студента (students.txt) ---" << endl;
+
+
+    ofstream fout_s2("students.txt", ios::app); // режим дописування
+    fout_s2 << "Петренко Олена,87" << endl;
+    fout_s2.close();
+    
+    cout << "Студент 'Петренко Олена,87' додано у students.txt (режим ios::app)." << endl;
+
+    cout << "\n--- 3. Читання та сума чисел (numbers.txt) ---" << endl;
+    
+    ofstream fout_n("numbers.txt");
+    fout_n << "5 8 12 3 7" << endl;
+    fout_n.close();
+    cout << "Файл numbers.txt створено." << endl;
+
+    ifstream fin_n("numbers.txt");
+    int n, sum = 0;
+
+    while (fin_n >> n) { // зчитування числа
+        sum += n;
+    }
+
+    cout << "Сума чисел: " << sum << endl;
+    fin_n.close();
+    
+    return 0;
+}
+5 8 12 3 7
+
+Іваненко Іван,95
+Петренко Олена,87
