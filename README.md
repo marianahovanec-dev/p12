@@ -65,12 +65,8 @@
 
 **Слова для пошуку:** `ofstream, ifstream, fstream, getline, app`
 
-| F | G | H | I | L | I | N | E | T |
-|---|---|---|---|---|---|---|---|---|
-**| O | F | S | T | R | E | A | M |** A |
-**| A | P | P **| X | Y | Z | A | B | C |
-**| I | F | S | T | R | E | A | M |** D |
-**| G | E | T | L | I | N | E |** M | N |
+<img width="391" height="249" alt="image" src="https://github.com/user-attachments/assets/ab1a8d24-a7c6-4500-b0a6-8bd1dbadae44" />
+
 
 
 
