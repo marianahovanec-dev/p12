@@ -1,0 +1,68 @@
+#include <fstream>
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    cout << "--- 1. Створення та доповнення students.txt ---" << endl;
+    
+    ofstream fout_write("students.txt"); 
+    string name1 = "Іваненко Іван";
+    double grade1 = 95;
+    fout_write << name1 << "," << grade1 << endl;
+    fout_write.close();
+
+
+    ofstream fout_append("students.txt", ios::app); 
+    string name2 = "Петренко Олена";
+    double grade2 = 87;
+    fout_append << name2 << "," << grade2 << endl;
+    fout_append.close();
+    
+    cout << "Файл students.txt містить: Іваненко Іван,95 та Петренко Олена,87" << endl;
+
+    
+    cout << "\n--- 2. Підрахунок студентів зі стипендією ---" << endl;
+    
+    ifstream fin_students("students.txt");
+    string name; 
+    int grade; 
+    int count = 0;
+
+    while (getline(fin_students, name, ',')) { 
+        
+      
+        if (fin_students >> grade && grade >= 90) { 
+            count++;  
+        }
+        
+        fin_students.ignore(1000, '\n');
+    }
+
+    cout << "Кількість студентів зі стипендією: " << count << endl;
+    fin_students.close();
+
+    cout << "\n--- 3. Читання та сума чисел (numbers.txt) ---" << endl;
+    
+    // Створення файлу numbers.txt
+    ofstream fout_n("numbers.txt");
+    fout_n << "5 8 12 3 7" << endl;
+    fout_n.close();
+
+    // Читання та підсумовування
+    ifstream fin_n("numbers.txt");
+    int n, sum = 0;
+
+    while (fin_n >> n) { 
+        sum += n;
+    }
+
+    cout << "Сума чисел: " << sum << endl;
+    fin_n.close();
+    
+    return 0;
+}
+5 8 12 3 7
+Іваненко Іван,95
+Петренко Олена,87
